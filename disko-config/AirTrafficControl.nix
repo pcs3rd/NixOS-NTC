@@ -36,6 +36,10 @@
                       mountOptions = [ "compress=zstd" "noexec" ];
                       mountpoint = "/stateful";
                   };
+                  "/sys-data" = {
+                      mountOptions = [ "compress=zstd" "noexec" ];
+                      mountpoint = "/sys-data";
+                  };
                   "/docker" = {
                       mountOptions = [ "compress=zstd" "noatime" ];
                       mountpoint = "/var/lib/docker";
@@ -50,30 +54,24 @@
     nodev."/" = {
       fsType = "tmpfs";
       mountOptions = [
-        "size=512M"
-        "defaults"
-        "mode=755"
-      ];
-    };
-    nodev."/" = {
-      fsType = "tmpfs";
-      mountOptions = [
         "size=1G"
         "defaults"
         "mode=755"
       ];
     };
-    nodev."/home" = {
+    nodev."/home/tower" = {
       fsType = "tmpfs";
       mountOptions = [
-        "size=1G"
+        "size=2G"
         "defaults"
         "mode=666"
         "noexec"
       ];
     };
+    fileSystems."/sys-data".neededForBoot = true;
     fileSystems."/stateful".neededForBoot = true;
-    environment.persistence."/stateful" = {
+
+    environment.persistence."/sys-data" = {
         enable = true; 
         hideMounts = true;
         directories = [

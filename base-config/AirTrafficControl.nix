@@ -19,17 +19,19 @@
     #  { from = 8000; to = 8010; }
     #];
   };
-  
-# User stuff
-  users.users = {
 
-    tower = {
-      isNormalUser = true;
-      home = "/home/tower";
-      description  = "tower user for ssh access";
-      uid = 1000; 
-      extraGroups = [ "wheel" "docker" "networkmanager" "storage" ]; 
-      hashedPasswordFile = "/stateful/sys-data/tower-passwordHash"; #  mkpasswd -m sha-512 
+# User stuff
+  users = {
+    mutableUsers = "false";
+    users = {
+        tower = {
+        isNormalUser = true;
+        home = "/home/tower";
+        description  = "tower user for ssh access";
+        uid = 1000; 
+        extraGroups = [ "wheel" "docker" "networkmanager" "storage" ]; 
+        hashedPassword = "$y$j9T$ADqlLG8YEo2JYFKETFyhk.$WcfHEBV4mHYBULxujU4/VTUyNpcvVj7l0BLkmoEyY92"; 
+        };
     };
   };
 
