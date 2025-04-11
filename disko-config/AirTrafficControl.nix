@@ -62,9 +62,10 @@
     nodev."/home/tower" = {
       fsType = "tmpfs";
       mountOptions = [
+        "user:
         "size=2G"
         "defaults"
-        "mode=666"
+        "mode=1777"
         "noexec"
       ];
     };
