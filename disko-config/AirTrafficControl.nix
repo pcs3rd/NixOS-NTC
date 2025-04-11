@@ -40,10 +40,6 @@
                     mountOptions = [ "compress=zstd" "noatime" ];
                     mountpoint = "/nix";
                   };
-                  "/sys-data" = {
-                      mountOptions = [ "compress=zstd" "noexec" ];
-                      mountpoint = "/sys-data";
-                  };
                   "/docker" = {
                       mountOptions = [ "compress=zstd" "noatime" ];
                       mountpoint = "/var/lib/docker";
@@ -83,10 +79,9 @@
             version = 3;
         };
     };
-    fileSystems."/sys-data".neededForBoot = true;
     fileSystems."/stateful".neededForBoot = true;
 
-    environment.persistence."/sys-data" = {
+    environment.persistence."/stateful" = {
         enable = true; 
         hideMounts = true;
         directories = [
