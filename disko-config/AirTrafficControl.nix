@@ -36,6 +36,10 @@
                       mountOptions = [ "compress=zstd" "noexec" ];
                       mountpoint = "/stateful";
                   };
+                  "/nix" = {
+                    mountOptions = [ "compress=zstd" "noatime" ];
+                    mountpoint = "/nix";
+                  };
                   "/sys-data" = {
                       mountOptions = [ "compress=zstd" "noexec" ];
                       mountpoint = "/sys-data";
