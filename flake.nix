@@ -31,8 +31,6 @@
             ./base-config/AirTrafficControl.nix
             {
               networking.hostName = "AirTrafficControl";
-              boot.loader.grub.device = "/dev/sdb";
-              disko.devices.disk.system.device = "/dev/sdb";
             }
         ];
       };

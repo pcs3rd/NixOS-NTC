@@ -7,6 +7,7 @@
   disko.devices = {
     disk = {
        system = {
+        device = "/dev/sdb";
         type = "disk";
         content = {
           type = "gpt";
@@ -72,6 +73,7 @@
         "noexec"
       ];
     };
+  boot.loader.grub.device = "/dev/sdb";
   fileSystems."/stateful".neededForBoot = true;
   environment.persistence."/stateful" = {
     enable = true; 
