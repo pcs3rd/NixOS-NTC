@@ -69,6 +69,16 @@
       ];
     };
   };
+    boot.loader = {
+        efi = {
+            canTouchEfiVariables = true;
+        };
+        grub = {
+            enable = true;
+            efiSupport = true;
+            version = 3;
+        };
+    };
     fileSystems."/sys-data".neededForBoot = true;
     fileSystems."/stateful".neededForBoot = true;
 
