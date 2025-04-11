@@ -27,10 +27,12 @@
       AirTrafficControl = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-            disko.nixosModules.disko
             ./base-config/AirTrafficControl.nix
+            ./disko-config/AirTrafficControl.nix
             {
               networking.hostName = "AirTrafficControl";
+              boot.loader.grub.device = "/dev/sdb";
+              disko.devices.disk.system.device = "/dev/sdb";
             }
         ];
       };
