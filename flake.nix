@@ -31,8 +31,8 @@
             ./service-config/blocky.nix
             {
               networking.hostName = "AirTrafficControl";
-              boot.loader.grub.device = "/dev/sda";
-              disko.devices.disk.system.device = "/dev/sda";
+              boot.loader.grub.device = "/dev/sdb";
+              disko.devices.disk.system.device = "/dev/sdb";
             }
         ];
       };
