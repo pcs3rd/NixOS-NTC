@@ -22,7 +22,7 @@
 
 # User stuff
   users = {
-    mutableUsers = "false";
+    mutableUsers = false;
     users = {
         tower = {
         isNormalUser = true;
