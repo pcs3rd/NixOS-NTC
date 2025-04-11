@@ -27,8 +27,7 @@
       AirTrafficControl = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-            # Blocky DNS Server. 
-            ./service-config/blocky.nix
+            ./base-config/AirTrafficControl.nix
             {
               networking.hostName = "AirTrafficControl";
               boot.loader.grub.device = "/dev/sdb";
