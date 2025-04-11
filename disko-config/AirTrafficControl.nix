@@ -68,6 +68,7 @@
         "noexec"
       ];
     };
+  };
     fileSystems."/sys-data".neededForBoot = true;
     fileSystems."/stateful".neededForBoot = true;
 
@@ -88,6 +89,5 @@
         { file = "/etc/ssh/ssh_host_ed25519_key"; parentDirectory = { mode = "u=rwx,g=r,o=r"; }; }
         { file = "/etc/ssh/ssh_host_ed25519_key.pub"; parentDirectory = { mode = "u=rwx,g=r,o=r"; }; }
         ];
-    };
     };
 }
