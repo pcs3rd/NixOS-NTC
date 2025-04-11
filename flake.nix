@@ -27,6 +27,7 @@
       AirTrafficControl = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
+            disko.nixosModules.disko
             ./base-config/AirTrafficControl.nix
             {
               networking.hostName = "AirTrafficControl";
