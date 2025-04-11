@@ -11,13 +11,8 @@
 
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 8443 8080 8443 8880 6789 53 4000 3000 ];
+    allowedTCPPorts = [ 8443 8080 8443 8880 6789 53 4000 3000 53 ];
     allowedUDPPorts = [ 3478 10001 1900 5514 53 ];
-
-    #allowedUDPPortRanges = [
-    #  { from = 4000; to = 4007; }
-    #  { from = 8000; to = 8010; }
-    #];
   };
 
 # User stuff
@@ -45,7 +40,6 @@
       PermitRootLogin = "no";
     };
   };
-  services.tailscale.enable = true;
 
   virtualisation.docker.enable = true;
   virtualisation.oci-containers.backend = "docker";
