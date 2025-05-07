@@ -1,7 +1,6 @@
 { outputs, inputs, lib, config, pkgs, modulesPath, ... }:{
   imports = [ 
     (modulesPath + "/installer/scan/not-detected.nix")
-    (import "${home-manager}/nixos")
     ];
   programs.home-manager.enable = true;
 
