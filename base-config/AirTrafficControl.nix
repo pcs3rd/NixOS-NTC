@@ -2,7 +2,6 @@
   imports = [ 
     (modulesPath + "/installer/scan/not-detected.nix")
     ];
-  programs.home-manager.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
