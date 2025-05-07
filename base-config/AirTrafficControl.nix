@@ -15,8 +15,8 @@
     allowedUDPPorts = [ 3478 10001 1900 5514 53 ];
   };
   services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.displayManager.gdm.enable = false;
+  services.xserver.desktopManager.gnome.enable = false;
 # User stuff
   users = {
     mutableUsers = false;
