@@ -72,12 +72,14 @@
   };
     boot.loader = {
         efi = {
-            canTouchEfiVariables = true;
+            canTouchEfiVariables = false;
         };
         grub = {
-            enable = true;
-            efiSupport = true;
-            version = 3;
+            enable                = true;
+            useOSProber           = true;
+            copyKernels           = true;
+            efiInstallAsRemovable = true;
+            efiSupport            = true;
         };
     };
     fileSystems."/stateful".neededForBoot = true;
