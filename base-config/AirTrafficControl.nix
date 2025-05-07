@@ -1,7 +1,9 @@
 { outputs, inputs, lib, config, pkgs, modulesPath, ... }:{
   imports = [ 
     (modulesPath + "/installer/scan/not-detected.nix")
+    (import "${inputs.home-manager}/nixos")
     ];
+  programs.home-manager.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -30,6 +32,9 @@
         hashedPassword = "$y$j9T$ADqlLG8YEo2JYFKETFyhk.$WcfHEBV4mHYBULxujU4/VTUyNpcvVj7l0BLkmoEyY92"; 
         };
     };
+  };
+  home-manager.users.tower = { pkgs, ... }: {
+    imports = [ ../extra-config/gnome-setting.nix ];
   };
   services.openssh = {
     enable = true;
