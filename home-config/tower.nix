@@ -5,5 +5,5 @@
     imports = [ ../extra-config/gnome-setting.nix ];
     # ...
   };   
-    home.stateVersion = 24.11;
+    home.stateVersion = "24.11";
 }
