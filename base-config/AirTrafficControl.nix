@@ -33,9 +33,7 @@
         };
     };
   };
-  home-manager.users.tower = { pkgs, ... }: {
-    imports = [ ../extra-config/gnome-setting.nix ];
-  };
+
   services.openssh = {
     enable = true;
     ports = [ 22 ];
