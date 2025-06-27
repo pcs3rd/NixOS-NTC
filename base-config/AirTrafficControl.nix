@@ -14,7 +14,7 @@
     allowedTCPPorts = [ 8443 8080 8443 8880 6789 53 4000 3000 53 ];
     allowedUDPPorts = [ 3478 10001 1900 5514 53 ];
   };
-  services.xserver.enable = true;
+  services.xserver.enable = false;
   services.xserver.displayManager.gdm.enable = false;
   services.xserver.desktopManager.gnome.enable = false;
 # User stuff
